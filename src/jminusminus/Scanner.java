@@ -15,7 +15,7 @@ import static jminusminus.TokenKind.*;
  * When you add a new token to the scanner, you must also add an entry in the
  * TokenKind enum in TokenInfo.java specifying the kind and image of the new
  * token.
- */
+ */ 
 
 class Scanner {
 
@@ -154,6 +154,9 @@ class Scanner {
         case '*':
             nextCh();
             return new TokenInfo(STAR, line);
+        case '%':
+        	nextCh();
+        	return new TokenInfo(REM, line);
         case '+':
             nextCh();
             if (ch == '=') {
